@@ -1,12 +1,103 @@
+<!--DAvide Grillo, Giacomo Guerrieri, Niccolò Burrini 4AIA-->
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Document</title>
-</head>
-<body>
-    <p>Sei nella Homepage</p>
-</body>
+    <head>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+                crossorigin="anonymous"></script>
+        <title>Gestione di una playlist</title>
+    </head>
+    <body class="bg-dark m-4" onload="start()">
+        <h1 class="text-light text-center">Gestione playlist</h1>
+
+        <form class="text-white">
+            <table id="inputs">
+                <tr>
+                    <td class="text-center">Titolo</td>
+                    <td><span class="error" id="titleEr"></span></td>
+                    <td><input id="title" type="text" class="rounded"><br></td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">Artista</td>
+                    <td><span class="error" id="artistEr"></span></td>
+                    <td><input id="artist" type="text" class="rounded"><span id="titleEr"></span><br></td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">Durata</td>
+                    <td><span class="error" id="lengthEr"></span></td>
+                    <td><input id="length" type="number" class="rounded"><br></td>
+                </tr>
+
+                <tr>
+                    <td class="text-center">Genere</td>
+                    <td><span class="error" id="genreEr"></span></td>
+                    <td>
+                        <select class="rounded" id="genre">
+                            <option value=""></option>
+                            <option value="Pop">Pop</option>
+                            <option value="Rock">Rock</option>
+                            <option value="Rap">Rap</option>
+                            <option value="Trap">Trap</option>
+                        </select><br>
+                    </td>
+                </tr>
+
+            </table>
+
+
+            <div class="text-center">
+                <button type="button" class="btn btn-success rounded" id="add" onclick="addSong()">Aggiungi</button>
+                <button type="button" class="btn btn-danger rounded" id="remove" onclick="removeSong()">Rimuovi</button>
+                <button type="button" class="btn btn-warning rounded text-white" id="modify" onclick="modifyPlaylist()">
+                    Modifica
+                </button>
+                <button type="button" class="btn btn-primary rounded" id="save" onclick="savePlaylist()">Salva Playlist</button>
+            </div>
+
+
+        </form>
+
+        <p class="text-danger text-center" id="error"></p>
+
+        <div class="text-white fw-bold text-center"><p>Numero Brani: <span id="songsNumber">0</span> Durata Totale:<span
+                id="totalLength">00:00:00</span></p></div>
+
+        <table class="text-white text-center table table-dark border-bottom border-top border-light border-opacity-50">
+            <thead>
+            <tr>
+                <th scope="col">Titolo</th>
+                <th scope="col">Artista</th>
+                <th scope="col">Durata</th>
+                <th scope="col">Genere</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="titles">
+
+                </td>
+                <td id="artists">
+
+                </td>
+                <td id="lengths">
+
+                </td>
+                <td id="genres">
+
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <script src="js/script.js"></script>
+    </body>
 </html>

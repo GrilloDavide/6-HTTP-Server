@@ -1,0 +1,34 @@
+* {
+    margin: 4px;
+
+}
+
+
+.error {
+    color: red;
+    margin: auto;
+
+    font-size: 20px;
+}
+
+
+.error404 {
+    color: red;
+    border: 2px solid red;
+    border-radius: 10px;
+    font-size: 20px;
+
+    background-color: #ffffff;
+}
+
+
+#inputs {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#genre {
+    min-width: 188px;
+    min-height: 28px;
+    margin-left: 1px;
+}
